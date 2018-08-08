@@ -25,8 +25,6 @@ provider "aws" {
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"
   region     = "${var.region}"
-  public_key = "${var.public_key}"
-  private_key = "${var.private_key}"
 }
 
 module "server" {
@@ -37,6 +35,8 @@ module "server" {
   subnet_id             = "${var.subnet_id}"
   vpc_security_group_id = "${var.vpc_security_group_id}"
   identity              = "${var.identity}"
+  public_key = "${var.public_key}"
+  private_key = "${var.private_key}"
 }
 
 output "public_ip" {
