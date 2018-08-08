@@ -4,6 +4,8 @@ terraform {
 
 variable "access_key" {}
 variable "secret_key" {}
+variable "public_key" {}
+variable "private_key" {}
 
 variable "region" {
   default = "us-east-1"
@@ -23,6 +25,8 @@ provider "aws" {
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"
   region     = "${var.region}"
+  public_key = "${var.public_key}"
+  private_key = "${var.private_key}"
 }
 
 module "server" {
